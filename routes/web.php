@@ -2,10 +2,20 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\InicioController;
+use App\Http\Controllers\NosotrosController;
+use App\Http\Controllers\ServiciosController;
+use App\Http\Controllers\NoticiasController;
+use App\Http\Controllers\ContactosController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+Route::get('/',[InicioController::class,'index']);
+Route::get('/nosotros',[NosotrosController::class,'nosotros']);
+Route::get('/servicios',[ServiciosController::class,'servicios']);
+Route::get('/noticias',[NoticiasController::class,'noticias']);
+Route::get('/contactos',[ContactosController::class,'contactos']);
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
